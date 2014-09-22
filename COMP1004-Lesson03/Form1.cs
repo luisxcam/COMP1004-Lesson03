@@ -16,5 +16,27 @@ namespace COMP1004_Lesson03
         {
             InitializeComponent();
         }
+
+        private void printButton_Click_1(object sender, EventArgs e)
+        {
+            //Prints the offer and the code.
+            printForm1.PrintAction = System.Drawing.Printing.PrintAction.PrintToPreview;
+            printForm1.Print();
+        }
+
+        private void calculateButton_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void clearButton_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void exitButton_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
