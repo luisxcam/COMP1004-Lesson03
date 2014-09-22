@@ -46,7 +46,7 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.averageAmountTextBox = new System.Windows.Forms.TextBox();
+            this.averageDiscountTextBox = new System.Windows.Forms.TextBox();
             this.discountedAmountSumTextBox = new System.Windows.Forms.TextBox();
             this.discountSumTextBox = new System.Windows.Forms.TextBox();
             this.quantitySumTextBox = new System.Windows.Forms.TextBox();
@@ -54,12 +54,12 @@
             this.label10 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.printButton = new System.Windows.Forms.Button();
             this.calculateButton = new System.Windows.Forms.Button();
             this.clearButton = new System.Windows.Forms.Button();
             this.exitButton = new System.Windows.Forms.Button();
             this.byLabel = new System.Windows.Forms.Label();
             this.printForm1 = new Microsoft.VisualBasic.PowerPacks.Printing.PrintForm(this.components);
+            this.printForm = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -69,7 +69,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(139, 32);
+            this.label1.Location = new System.Drawing.Point(131, 9);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(131, 25);
             this.label1.TabIndex = 0;
@@ -83,10 +83,10 @@
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Location = new System.Drawing.Point(12, 77);
+            this.groupBox1.Location = new System.Drawing.Point(12, 37);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(368, 100);
-            this.groupBox1.TabIndex = 1;
+            this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Input";
             // 
@@ -102,14 +102,14 @@
             this.titleTextBox.Location = new System.Drawing.Point(60, 49);
             this.titleTextBox.Name = "titleTextBox";
             this.titleTextBox.Size = new System.Drawing.Size(295, 20);
-            this.titleTextBox.TabIndex = 4;
+            this.titleTextBox.TabIndex = 3;
             // 
             // quantityTextBox
             // 
             this.quantityTextBox.Location = new System.Drawing.Point(60, 25);
             this.quantityTextBox.Name = "quantityTextBox";
             this.quantityTextBox.Size = new System.Drawing.Size(100, 20);
-            this.quantityTextBox.TabIndex = 3;
+            this.quantityTextBox.TabIndex = 1;
             // 
             // label4
             // 
@@ -117,7 +117,7 @@
             this.label4.Location = new System.Drawing.Point(7, 73);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(31, 13);
-            this.label4.TabIndex = 2;
+            this.label4.TabIndex = 4;
             this.label4.Text = "&Price";
             // 
             // label3
@@ -126,7 +126,7 @@
             this.label3.Location = new System.Drawing.Point(7, 49);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(27, 13);
-            this.label3.TabIndex = 1;
+            this.label3.TabIndex = 2;
             this.label3.Text = "&Title";
             // 
             // label2
@@ -146,7 +146,7 @@
             this.groupBox2.Controls.Add(this.label7);
             this.groupBox2.Controls.Add(this.label6);
             this.groupBox2.Controls.Add(this.label5);
-            this.groupBox2.Location = new System.Drawing.Point(12, 184);
+            this.groupBox2.Location = new System.Drawing.Point(12, 144);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(368, 92);
             this.groupBox2.TabIndex = 2;
@@ -160,6 +160,7 @@
             this.discountedPriceTextBox.ReadOnly = true;
             this.discountedPriceTextBox.Size = new System.Drawing.Size(100, 20);
             this.discountedPriceTextBox.TabIndex = 8;
+            this.discountedPriceTextBox.TabStop = false;
             this.discountedPriceTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // discountTextBox
@@ -169,6 +170,7 @@
             this.discountTextBox.ReadOnly = true;
             this.discountTextBox.Size = new System.Drawing.Size(100, 20);
             this.discountTextBox.TabIndex = 7;
+            this.discountTextBox.TabStop = false;
             this.discountTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // extendedPriceTextBox
@@ -178,6 +180,7 @@
             this.extendedPriceTextBox.ReadOnly = true;
             this.extendedPriceTextBox.Size = new System.Drawing.Size(100, 20);
             this.extendedPriceTextBox.TabIndex = 6;
+            this.extendedPriceTextBox.TabStop = false;
             this.extendedPriceTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // label7
@@ -209,7 +212,7 @@
             // 
             // groupBox3
             // 
-            this.groupBox3.Controls.Add(this.averageAmountTextBox);
+            this.groupBox3.Controls.Add(this.averageDiscountTextBox);
             this.groupBox3.Controls.Add(this.discountedAmountSumTextBox);
             this.groupBox3.Controls.Add(this.discountSumTextBox);
             this.groupBox3.Controls.Add(this.quantitySumTextBox);
@@ -217,21 +220,22 @@
             this.groupBox3.Controls.Add(this.label10);
             this.groupBox3.Controls.Add(this.label9);
             this.groupBox3.Controls.Add(this.label8);
-            this.groupBox3.Location = new System.Drawing.Point(12, 283);
+            this.groupBox3.Location = new System.Drawing.Point(12, 243);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(368, 139);
             this.groupBox3.TabIndex = 3;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Summary";
             // 
-            // averageAmountTextBox
+            // averageDiscountTextBox
             // 
-            this.averageAmountTextBox.Location = new System.Drawing.Point(255, 101);
-            this.averageAmountTextBox.Name = "averageAmountTextBox";
-            this.averageAmountTextBox.ReadOnly = true;
-            this.averageAmountTextBox.Size = new System.Drawing.Size(100, 20);
-            this.averageAmountTextBox.TabIndex = 12;
-            this.averageAmountTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.averageDiscountTextBox.Location = new System.Drawing.Point(255, 101);
+            this.averageDiscountTextBox.Name = "averageDiscountTextBox";
+            this.averageDiscountTextBox.ReadOnly = true;
+            this.averageDiscountTextBox.Size = new System.Drawing.Size(100, 20);
+            this.averageDiscountTextBox.TabIndex = 12;
+            this.averageDiscountTextBox.TabStop = false;
+            this.averageDiscountTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // discountedAmountSumTextBox
             // 
@@ -240,6 +244,7 @@
             this.discountedAmountSumTextBox.ReadOnly = true;
             this.discountedAmountSumTextBox.Size = new System.Drawing.Size(100, 20);
             this.discountedAmountSumTextBox.TabIndex = 11;
+            this.discountedAmountSumTextBox.TabStop = false;
             this.discountedAmountSumTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // discountSumTextBox
@@ -249,6 +254,7 @@
             this.discountSumTextBox.ReadOnly = true;
             this.discountSumTextBox.Size = new System.Drawing.Size(100, 20);
             this.discountSumTextBox.TabIndex = 10;
+            this.discountSumTextBox.TabStop = false;
             this.discountSumTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // quantitySumTextBox
@@ -258,6 +264,7 @@
             this.quantitySumTextBox.ReadOnly = true;
             this.quantitySumTextBox.Size = new System.Drawing.Size(100, 20);
             this.quantitySumTextBox.TabIndex = 9;
+            this.quantitySumTextBox.TabStop = false;
             this.quantitySumTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // label11
@@ -296,32 +303,22 @@
             this.label8.TabIndex = 0;
             this.label8.Text = "Total Number of Books";
             // 
-            // printButton
-            // 
-            this.printButton.Location = new System.Drawing.Point(13, 429);
-            this.printButton.Name = "printButton";
-            this.printButton.Size = new System.Drawing.Size(75, 23);
-            this.printButton.TabIndex = 4;
-            this.printButton.Text = "Print &Form";
-            this.printButton.UseVisualStyleBackColor = true;
-            this.printButton.Click += new System.EventHandler(this.printButton_Click_1);
-            // 
             // calculateButton
             // 
-            this.calculateButton.Location = new System.Drawing.Point(110, 428);
+            this.calculateButton.Location = new System.Drawing.Point(110, 388);
             this.calculateButton.Name = "calculateButton";
             this.calculateButton.Size = new System.Drawing.Size(75, 23);
-            this.calculateButton.TabIndex = 5;
+            this.calculateButton.TabIndex = 2;
             this.calculateButton.Text = "&Calculate";
             this.calculateButton.UseVisualStyleBackColor = true;
             this.calculateButton.Click += new System.EventHandler(this.calculateButton_Click);
             // 
             // clearButton
             // 
-            this.clearButton.Location = new System.Drawing.Point(207, 429);
+            this.clearButton.Location = new System.Drawing.Point(207, 389);
             this.clearButton.Name = "clearButton";
             this.clearButton.Size = new System.Drawing.Size(75, 23);
-            this.clearButton.TabIndex = 6;
+            this.clearButton.TabIndex = 3;
             this.clearButton.Text = "Clear &Sale";
             this.clearButton.UseVisualStyleBackColor = true;
             this.clearButton.Click += new System.EventHandler(this.clearButton_Click);
@@ -329,10 +326,10 @@
             // exitButton
             // 
             this.exitButton.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.exitButton.Location = new System.Drawing.Point(304, 429);
+            this.exitButton.Location = new System.Drawing.Point(304, 389);
             this.exitButton.Name = "exitButton";
             this.exitButton.Size = new System.Drawing.Size(75, 23);
-            this.exitButton.TabIndex = 7;
+            this.exitButton.TabIndex = 4;
             this.exitButton.Text = "E&xit";
             this.exitButton.UseVisualStyleBackColor = true;
             this.exitButton.Click += new System.EventHandler(this.exitButton_Click);
@@ -341,7 +338,7 @@
             // 
             this.byLabel.AutoSize = true;
             this.byLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.byLabel.Location = new System.Drawing.Point(274, 468);
+            this.byLabel.Location = new System.Drawing.Point(274, 428);
             this.byLabel.Name = "byLabel";
             this.byLabel.Size = new System.Drawing.Size(106, 13);
             this.byLabel.TabIndex = 8;
@@ -355,18 +352,28 @@
             this.printForm1.PrinterSettings = ((System.Drawing.Printing.PrinterSettings)(resources.GetObject("printForm1.PrinterSettings")));
             this.printForm1.PrintFileName = null;
             // 
+            // printForm
+            // 
+            this.printForm.Location = new System.Drawing.Point(12, 389);
+            this.printForm.Name = "printForm";
+            this.printForm.Size = new System.Drawing.Size(75, 23);
+            this.printForm.TabIndex = 1;
+            this.printForm.Text = "Print &Form";
+            this.printForm.UseVisualStyleBackColor = true;
+            this.printForm.Click += new System.EventHandler(this.printForm_Click);
+            // 
             // BookSaleForm
             // 
             this.AcceptButton = this.calculateButton;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.exitButton;
-            this.ClientSize = new System.Drawing.Size(392, 490);
+            this.ClientSize = new System.Drawing.Size(392, 450);
+            this.Controls.Add(this.printForm);
             this.Controls.Add(this.byLabel);
             this.Controls.Add(this.exitButton);
             this.Controls.Add(this.clearButton);
             this.Controls.Add(this.calculateButton);
-            this.Controls.Add(this.printButton);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
@@ -405,7 +412,7 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.TextBox averageAmountTextBox;
+        private System.Windows.Forms.TextBox averageDiscountTextBox;
         private System.Windows.Forms.TextBox discountedAmountSumTextBox;
         private System.Windows.Forms.TextBox discountSumTextBox;
         private System.Windows.Forms.TextBox quantitySumTextBox;
@@ -413,12 +420,12 @@
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Button printButton;
         private System.Windows.Forms.Button calculateButton;
         private System.Windows.Forms.Button clearButton;
         private System.Windows.Forms.Button exitButton;
         private System.Windows.Forms.Label byLabel;
         private Microsoft.VisualBasic.PowerPacks.Printing.PrintForm printForm1;
+        private System.Windows.Forms.Button printForm;
     }
 }
 
